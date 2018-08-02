@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import java.util.Date;
+
 @SpringBootApplication
 @EnableScheduling
 public class SpringSchedulerExampleApplication {
@@ -19,6 +21,6 @@ public class SpringSchedulerExampleApplication {
 
     @Scheduled(initialDelay = 3000, fixedDelay = 2000)
     public void takeAction() {
-        LOG.info("Running the @Scheduled task...");
+        LOG.info("Running the @Scheduled task..." + new Date());
     }
 }
